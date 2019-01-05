@@ -1,7 +1,7 @@
 <template>
   <div class="breadcrumb">
     <el-breadcrumb separator="/">
-      <el-breadcrumb-item v-for="(item, index) in breadcurmbList" :key="index">
+      <el-breadcrumb-item v-for="(item, index) in breadcurmbList||[]" :key="index">
         <router-link
           :to="{
           path:item.url,
@@ -16,15 +16,18 @@
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters["breadcurmbList"]
+    breadcurmbList(){
+      return this.$store.state.breadcurmb.list
+    }
+  },
+  mounted(){
   }
 };
 </script>
 <style lang="scss">
 .breadcrumb {
-  margin: -24px -24px 0px;
   .el-breadcrumb {
-    padding: 16px 24px;
+    padding: 20px 24px;
     background: #fff;
   }
   a {

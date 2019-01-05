@@ -11,12 +11,28 @@ const Main = resolve => {
   spinRoute.show();
   require(["@/page/main/main.vue"], spinRoute.resolve(resolve));
 };
-// const stockSummary = resolve => {
-//   spinRoute.show();
-//   require(["@/page/stock/summary/summary.vue"], spinRoute.resolve(resolve));
-// };
-export default [
-  {
+const QLSX = resolve => {
+  spinRoute.show();
+  require(["@/view/manager/qlsxsl/index.vue"], spinRoute.resolve(resolve));
+};
+const QLSXDetail = resolve => {
+  spinRoute.show();
+  require(["@/view/manager/qlsxsl/detail.vue"], spinRoute.resolve(resolve));
+};
+const XMXX = resolve => {
+  spinRoute.show();
+  require(["@/view/manager/xmxx/index.vue"], spinRoute.resolve(resolve));
+};
+const QLSXBLDetail = resolve => {
+  spinRoute.show();
+  require(["@/view/manager/qlsxsl/blDetail.vue"], spinRoute.resolve(resolve));
+};
+const QLSXBLEdit = resolve => {
+  spinRoute.show();
+  require(["@/view/manager/qlsxsl/edit.vue"], spinRoute.resolve(resolve));
+};
+
+export default [{
     name: "login",
     path: "/login",
     component: Login,
@@ -37,21 +53,31 @@ export default [
   {
     name: "_home",
     path: "/",
+    redirect: '/QLSX',
     meta: {
       title: "主页"
     },
     component: Main,
-    children: [
-      // {
-      //   name: "stockSummary",
-      //   path: "/stockSummary",
-      //   components: {
-      //     default: stockSummary
-      //   },
-      //   meta: {
-      //     title: "库存概况"
-      //   }
-      // }
-    ]
+    children: [{
+      name: "QLSX",
+      path: "/QLSX",
+      component: QLSX,
+    }, {
+      name: "QLSXBLDetail",
+      path: "/QLSXBLDetail",
+      component: QLSXBLDetail,
+    }, {
+      name: "QLSXDetail",
+      path: "/QLSXDetail",
+      component: QLSXDetail,
+    }, {
+      name: "XMXX",
+      path: "/XMXX",
+      component: XMXX,
+    }, {
+      name: "QLSXBLEdit",
+      path: "/QLSXBLEdit",
+      component: QLSXBLEdit,
+    }]
   }
 ];

@@ -1,6 +1,58 @@
 .wrap-login {
+  width: 100%;
+  height: 100%;
+  background: url(../../assets/images/icon_beij.png) no-repeat;
+  background-size: cover;
+
   .box-login {
     width: 360px;
     height: 400px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .el-input__prefix{
+    left: 13px;
+  }
+  .el-input__inner{
+    padding-left: 38px;
+  }
+  .form{
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    .btn-submit{
+      margin-top: 35px;
+      width: 100%;
+    }
+  }
+
+  .menu-tab {
+    height: 36px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    color: rgba(5, 21, 39, .65);
+    margin: 0 30px;
+    margin-top: 46px;
+    &>div:hover{
+      cursor: pointer;
+    }
+    &>div.active {
+      color: rgba(97, 127, 204, 1);
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        background-color: rgba(97, 127, 204, 1);
+      }
+    }
   }
 }

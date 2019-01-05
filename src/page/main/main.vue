@@ -7,8 +7,8 @@
       <!-- 头部用户栏 -->
       <tur-header></tur-header>
       <!-- 路由页面 -->
+      <breadcurmb></breadcurmb>
       <div class="app-inner-content">
-        <breadcurmb></breadcurmb>
         <router-view></router-view>
       </div>
     </div>

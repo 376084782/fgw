@@ -2,19 +2,15 @@ import axios from '@/libs/api.request'
 import md5 from 'js-md5';
 
 export const login = ({
-  userName,
-  pwd,
-  needVerificationCode,
-  verificationCode
+  loginName,
+  password,
 }) => {
   const data = {
-    userName,
-    pwd: md5(pwd),
-    needVerificationCode,
-    verificationCode
+    loginName,
+    password: md5(password),
   }
   return axios.request({
-    url: '/his/ums/login/account',
+    url: '/login',
     data,
     method: 'post'
   })

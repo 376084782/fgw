@@ -1,8 +1,8 @@
 // 引入自定义组件
-// import drawer from './drawer/drawer.vue'
+import pagination from './pagination.vue'
 const Common = {
   install: function (Vue) {
-    // Vue.component('Drawer', drawer)
+    Vue.component('pagination', pagination)
   }
 }
 // 导出

@@ -1,65 +1,40 @@
 .app-header {
   position: relative;
   height: 64px;
+  background: linear-gradient(to left, #659BE8, #4962B9);
   background-color: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
   overflow: hidden;
   z-index: 999;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 64px;
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+
+  .btn {
+    &:hover {
+      cursor: pointer;
+    }
+
+    width: 100px;
+    height: 100%;
+    border-left: 1px solid rgba(255, 255, 255, .16);
+    display: block;
+    text-align: center;
+  }
 
   .title {
-    font-size: 18px;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 1);
-    opacity: 0.85;
-    padding-left: 24px;
+    margin-right: 24px;
   }
 
-  .header-menu {
-    line-height: 64px;
-
-    .menu-item {
-      display: inline-block;
-      vertical-align: top;
-      height: 100%;
-      padding: 0 8px;
-      cursor: pointer;
-      .anticon{
-        font-size: 18px;
-      }
-      &:not(.search):hover {
-        background-color: #e6f7ff;
-      }
-      &.search{
-        .el-input__inner{
-          border-radius: 1000px!important;
-        }
-      }
-    }
-
-    .menu-item-pcscope {
-      .el-input__inner {
-        padding: 0;
-        color: #409eff;
-        border: none;
-      }
-
-      .el-input__icon {
-        color: #409eff;
-      }
-    }
-
-    .menu-item-mobilescope {
-      margin-left: -10px;
-    }
-
-    .el-badge {
-      display: inline;
-    }
-  }
 }
 
 .app-inner-content {
   position: relative;
   flex: 1;
-  margin: 24px 24px 0px;
+  padding: 0 24px 0px;
+  overflow: hidden;
+  overflow-y: scroll;
 }

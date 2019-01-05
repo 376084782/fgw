@@ -3,8 +3,7 @@
     <div class="logo">
       <span class="menu-item">
         <div>
-          <i class="anticon icon-dropbox"></i>
-          <span>智信经开</span>
+          <span>固定资产投资项目管理系统</span>
         </div>
       </span>
     </div>

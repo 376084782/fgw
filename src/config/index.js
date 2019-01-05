@@ -4,8 +4,8 @@ export default {
    */
   baseUrl: {
     // dev: 'Base URL https://www.easy-mock.com/mock/5bf90c9726597e44f7db4239/example',
-    // dev: 'http://rap2api.taobao.org/app/mock/115272/post',
-    dev: 'http://116.62.62.195:9020',
+    dev: 'http://rap2api.taobao.org/app/mock/118345/post',
+    // dev: 'http://116.62.62.195:9020',
     // dev: 'http://192.168.43.230:9020',
     pro: 'http://116.62.62.195:9020',
     // pro: 'http://rap2api.taobao.org/app/mock/115272/post'

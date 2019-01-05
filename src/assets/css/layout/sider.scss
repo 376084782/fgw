@@ -1,6 +1,6 @@
-$var-color-sider-bg: #121F3E;
+$var-color-sider-bg: #001529;
 $var-color-sider-unative: rgba($color: #fff, $alpha: 0.65);
-$var-color-sider-active: #3991F7;
+$var-color-sider-active: #587FD2;
 $var-color-log-bg: rgb(0, 33, 64);
 $var-color-log: #fff;
 
@@ -13,7 +13,25 @@ $var-color-log: #fff;
   width: 64px;
 }
 
+.el-submenu__title,
+.el-menu-item {
+
+  &,
+  * {
+    color: rgba(255, 255, 255, .65) !important;
+    font-size: 14px !important;
+  }
+}
+
 .is-opened {
+
+  .el-submenu__title {
+
+    &,
+    * {
+      color: rgba(255, 255, 255, 1) !important;
+    }
+  }
 
   .sider-first-child,
   .el-submenu__title .el-submenu__icon-arrow,
@@ -25,7 +43,7 @@ $var-color-log: #fff;
 .sider-first-child,
 .el-submenu__title {
   background: $var-color-sider-bg !important;
-  color: $var-color-sider-unative;
+  color: rgba(255, 255, 255, .65);
 
   .anticon {
     margin-right: 10px;
@@ -63,6 +81,7 @@ $var-color-log: #fff;
 
 .el-menu-item.is-active {
   background: $var-color-sider-active !important;
+  color: white!important;
 }
 
 .el-submenu__icon-arrow {
@@ -74,7 +93,7 @@ $var-color-log: #fff;
   box-shadow: rgba(0, 21, 41, 0.35) 2px 0px 6px;
 
   .el-menu {
-    width: 232px !important;
+    width: 256px !important;
   }
 
   .logo {
@@ -83,12 +102,15 @@ $var-color-log: #fff;
     color: $var-color-log;
     line-height: 64px;
     padding-left: 20px;
+    background: url(../../images/header_left.png);
     cursor: pointer;
-    .menu-item>div{
+
+    .menu-item>div {
       display: flex;
       align-items: center;
       justify-content: start;
     }
+
     .anticon {
       font-size: 22px;
       margin-right: 12px;

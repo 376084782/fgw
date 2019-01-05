@@ -1,6 +1,7 @@
 import './common/reset.scss';
 import './common/uireset.scss';
 import './common/common.scss';
+import './common/common-table.scss';
 import './common/animation.scss';
 import './layout/layout.scss';
 import './layout/header.scss';

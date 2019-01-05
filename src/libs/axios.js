@@ -3,7 +3,8 @@ import store from '@/store'
 import {
   dateFormater,
   getParams,
-  getToken
+  getToken,
+  setToken
 } from '@/libs/util'
 // import { Spin } from 'iview'
 
@@ -34,13 +35,13 @@ class HttpRequest {
     let params = getParams(window.location.href);
     const config = {
       baseURL: this.baseUrl,
-      headers: {
-        'device-code': deviceCode,
-        'device-type': 6,
-        'hospital': params['hospital'] || 'VHUJ0Hld3SpyK5TFzpPGYw==',
-        'trade-time': dateFormater(new Date().getTime(), 'yyyy-MM-dd hh:mm:ss'),
-        'token': getToken() || ''
-      }
+      // headers: {
+      //   'device-code': deviceCode,
+      //   'device-type': 6,
+      //   'hospital': params['hospital'] || 'VHUJ0Hld3SpyK5TFzpPGYw==',
+      //   'trade-time': dateFormater(new Date().getTime(), 'yyyy-MM-dd hh:mm:ss'),
+      //   'token': getToken() || ''
+      // }
     }
     return config
   }
@@ -108,13 +109,14 @@ class HttpRequest {
         data,
         headers
       }) => {
-        let code = +headers['business-status'] || 200;
-        let msg = headers['message'];
-        deviceCode = headers['device-code'] || deviceCode;
-        if (headers['token']) {
-          setToken(headers['token'], headers['trade-time']);
-        }
-        if (code <= 299 && code >= 200) {
+        let code = data.code;
+        let msg = data['message'];
+
+        setToken('token');
+        // if (data['token']) {
+        //   setToken(data['token']);
+        // }
+        if (code < 10) {
           res(data);
         } else {
           let errData = {
@@ -123,21 +125,11 @@ class HttpRequest {
           };
           rej(errData)
         }
-      }).catch(({
-        response
-      }) => {
-        if (response) {
-          let headers = response['headers'] || {};
-          let code = +headers['business-status'] || 200;
-          let msg = headers['message'];
-          let errData = {
-            code: code,
-            message: decodeURIComponent(msg)
-          };
-          rej(errData)
-        } else {
-          rej()
-        }
+      }).catch((e) => {
+        console.warn(e)
+        rej({
+          message: '网络错误'
+        })
       })
     })
   }

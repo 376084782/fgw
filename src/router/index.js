@@ -15,6 +15,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   const token = getToken();
+  console.log('token',token)
   if (!token && to.meta.noLogin) {
     // 未登录且要跳转的页面不需要登录
     next(); // 跳转
@@ -27,17 +28,18 @@ router.beforeEach((to, from, next) => {
     next({ path: HOME_PAGE_PATH });
   } else {
     // 已登录且要跳转的页面需要登录
-    store
-      .dispatch("getUserInfo")
-      .then(user => {
-        store.dispatch("updateMenuList");
-        next();
-      })
-      .catch(() => {
-        // 回到登录
-        setToken("");
-        next({ path: LOGIN_PAGE_PATH });
-      });
+    
+    next();
+    // store
+    //   .dispatch("getUserInfo")
+    //   .then(user => {
+    //     store.dispatch("updateMenuList");
+    //   })
+    //   .catch(() => {
+    //     // 回到登录
+    //     setToken("");
+    //     next({ path: LOGIN_PAGE_PATH });
+    //   });
   }
 });
 

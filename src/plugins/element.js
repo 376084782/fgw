@@ -36,9 +36,35 @@ import {
     Tag,
     Dropdown,
     DropdownMenu,
-    DropdownItem
+    DropdownItem,
+    Badge,
+    Popover,
+    TabPane,
+    Tabs,
+    Breadcrumb,
+    BreadcrumbItem,
+    Card,
+    Pagination,
+    Collapse,
+    CollapseItem,
+    Dialog,
+    Radio,
+    Checkbox
 } from 'element-ui';
 
+Vue.use(Checkbox)
+Vue.use(Radio)
+Vue.use(Dialog)
+Vue.use(Collapse)
+Vue.use(CollapseItem)
+Vue.use(Pagination)
+Vue.use(Card)
+Vue.use(BreadcrumbItem)
+Vue.use(Breadcrumb)
+Vue.use(TabPane)
+Vue.use(Tabs)
+Vue.use(Popover)
+Vue.use(Badge)
 Vue.use(Button)
 Vue.use(Dropdown)
 Vue.use(DropdownMenu)

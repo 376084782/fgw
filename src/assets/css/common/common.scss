@@ -56,6 +56,18 @@
   color: #909399;
 }
 
+.pd24 {
+  padding: 24px;
+}
+
+.mg24 {
+  margin: 24px;
+}
+
+.w60 {
+  width: 60px !important;
+}
+
 /* margin 10 */
 .mg10 {
   margin: 10px;
@@ -338,7 +350,76 @@ h4 {
   }
 }
 
-.main{
+.main {
   width: 100%;
   height: 100%;
+}
+
+i.grey {
+  margin: 0 5px;
+  color: #E5E5E5;
+}
+
+.noline {
+  .el-tabs__nav-wrap.is-top {
+    &:after {
+      display: none !important;
+    }
+  }
+}
+
+.small {
+  .el-tabs__item {
+    font-size: 14px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+  }
+}
+
+.top-flex-area {
+  display: flex !important;
+  justify-content: space-between;
+  height: 80px;
+  margin-top: -24px;
+  align-items: center;
+  font-size: 16px;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(0, 0, 0, .85);
+}
+
+.bar-expand {
+  &:hover{
+    cursor: pointer;
+  }
+  width: 100%;
+  height: 40px;
+  background: rgba(250, 250, 250, 1);
+  border: 1px solid rgba(229, 229, 229, 1);
+  text-indent: 45px;
+  line-height: 40px;
+  font-size: 14px;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: rgba(88, 127, 210, 1);
+  border-top: none;
+  border-bottom: none;
+}
+.form-half{
+  .w400{
+    .el-form-item__label{
+      width: 400px!important;
+      white-space: nowrap!important;
+      padding-left: 0;
+    }
+  }
+  .el-form-item__label{
+    white-space: nowrap!important;
+    padding-left: 0;
+  }
+  &>.el-form-item{
+    min-width: 500px;
+    margin: 0!important;
+    margin-bottom: 10px!important;
+  }
 }
